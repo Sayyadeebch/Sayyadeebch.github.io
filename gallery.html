@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Gallery | ADUSTECH Snacks and Catering Services
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="gallery.css">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-icon">
+            🍽️
+        </span>
+
+        <span class="logo-name">
+
+            <strong>
+                ADUSTECH SNACKS
+                <span>AND CATERING</span>
+            </strong>
+
+            <strong>
+                <span>SERVICES (ASACS)</span>
+            </strong>
+
+        </span>
+
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation">
+
+        ☰
+
+    </button>
+
+
+    <nav id="navMenu">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="gallery.html" class="active">
+            Gallery
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="gallery-hero">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">
+            ✦ OUR GALLERY
+        </span>
+
+        <h1>
+            A taste of
+            <span>what we do.</span>
+        </h1>
+
+        <p>
+            Explore meals, snacks, events and moments
+            from ADUSTECH Snacks and Catering Services.
+        </p>
+
+        <a href="#gallery" class="hero-btn">
+            Explore Gallery ↓
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery-section" id="gallery">
+
+
+    <div class="section-heading">
+
+        <span>
+            VISUAL JOURNEY
+        </span>
+
+        <h2>
+            Fresh. Simple. Delicious.
+        </h2>
+
+        <p>
+            Browse through our collection and discover
+            the experience behind ASACS.
+        </p>
+
+    </div>
+
+
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="filter-buttons">
+
+        <button
+            class="filter-btn active"
+            data-filter="all">
+
+            All
+
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="meals">
+
+            Meals
+
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="snacks">
+
+            Snacks
+
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="events">
+
+            Events
+
+        </button>
+
+    </div>
+
+
+
+    <!-- GALLERY GRID -->
+
+    <div class="gallery-grid" id="galleryGrid">
+
+
+        <article
+            class="gallery-item large"
+            data-category="meals">
+
+            <img
+                src="images/gallery-meal-1.jpg"
+                alt="ADUSTECH meal">
+
+            <div class="gallery-overlay">
+
+                <span>
+                    MEALS
+                </span>
+
+                <h3>
+                    Everyday goodness
+                </h3>
+
+                <button
+                    class="view-btn"
+                    aria-label="View meal image">
+
+                    ↗
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="gallery-item"
+            data-category="snacks">
+
+            <img
+                src="images/gallery-snack-1.jpg"
+                alt="ADUSTECH snack">
+
+            <div class="gallery-overlay">
+
+                <span>
+                    SNACKS
+                </span>
+
+                <h3>
+                    Quick & tasty
+                </h3>
+
+                <button
+                    class="view-btn"
+                    aria-label="View snack image">
+
+                    ↗
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="gallery-item"
+            data-category="meals">
+
+            <img
+                src="images/gallery-meal-2.jpg"
+                alt="Fresh meal">
+
+            <div class="gallery-overlay">
+
+                <span>
+                    MEALS
+                </span>
+
+                <h3>
+                    Prepared with care
+                </h3>
+
+                <button
+                    class="view-btn"
+                    aria-label="View meal image">
+
+                    ↗
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="gallery-item"
+            data-category="events">
+
+            <img
+                src="images/gallery-event-1.jpg"
+                alt="Catering event">
+
+            <div class="gallery-overlay">
+
+                <span>
+                    EVENTS
+                </span>
+
+                <h3>
+                    Made for occasions
+                </h3>
+
+                <button
+                    class="view-btn"
+                    aria-label="View event image">
+
+                    ↗
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="gallery-item tall"
+            data-category="snacks">
+
+            <img
+                src="images/gallery-snack-2.jpg"
+                alt="Fresh snack">
+
+            <div class="gallery-overlay">
+
+                <span>
+                    SNACKS
+                </span>
+
+                <h3>
+                    Something special
+                </h3>
+
+                <button
+                    class="view-btn"
+                    aria-label="View snack image">
+
+                    ↗
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="gallery-item"
+            data-category="events">
+
+            <img
+                src="images/gallery-event-2.jpg"
+                alt="Catering service">
+
+            <div class="gallery-overlay">
+
+                <span>
+                    EVENTS
+                </span>
+
+                <h3>
+                    Serving together
+                </h3>
+
+                <button
+                    class="view-btn"
+                    aria-label="View event image">
+
+                    ↗
+
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= LIGHTBOX ================= -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true">
+
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose" 
+        aria-label="Close image">
+
+        ×
+
+    </button>
+
+
+    <button
+        class="lightbox-arrow previous"
+        id="previousImage"
+        aria-label="Previous image">
+
+        ‹
+
+    </button>
+
+
+    <div class="lightbox-content">
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="Gallery preview">
+
+        <div class="lightbox-caption">
+
+            <span id="lightboxCategory">
+                CATEGORY
+            </span>
+
+            <h3 id="lightboxTitle">
+                Gallery image
+            </h3>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="lightbox-arrow next"
+        id="nextImage"
+        aria-label="Next image">
+
+        ›
+
+    </button>
+
+</div>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="gallery-cta">
+
+    <div>
+
+        <span>
+            LIKE WHAT YOU SEE?
+        </span>
+
+        <h2>
+            Let's prepare something
+            delicious for you.
+        </h2>
+
+    </div>
+
+
+    <a href="contact.html">
+        Place an Order →
+    </a>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <strong>
+            ADUSTECH SNACKS AND CATERING SERVICES
+        </strong>
+
+        <span>
+            ASACS
+        </span>
+
+    </div>
+
+
+    <p>
+        © 2026 ADUSTECH Snacks and Catering Services.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+
+<script src="gallery.js"></script>
+
+</body>
+
+</html>

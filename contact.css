@@ -1,0 +1,759 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fafafa;
+    color: #171717;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 78px;
+    padding: 12px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255,255,255,0.94);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 0.92rem;
+    line-height: 1.35;
+}
+
+.logo-name strong span {
+    color: #ef6200;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar nav a {
+    position: relative;
+
+    color: #555;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #ef6200;
+}
+
+.navbar nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #ef6200;
+}
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    font-size: 1.7rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.contact-hero {
+    min-height: 55vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 7%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.85),
+            rgba(0,0,0,0.35)
+        ),
+        url("images/contact-hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 700px;
+
+    color: white;
+
+    animation: heroReveal 0.9s ease forwards;
+}
+
+.eyebrow {
+    color: #ff7010;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.hero-content h1 {
+    margin: 18px 0;
+
+    font-size: clamp(2.7rem, 6vw, 5rem);
+
+    line-height: 1.05;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #ff7010;
+}
+
+.hero-content p {
+    max-width: 580px;
+
+    color: #ddd;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+    padding: 110px 7%;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 90px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   CONTACT INFORMATION
+========================= */
+
+.contact-info {
+    padding-top: 20px;
+}
+
+.section-label {
+    color: #ef6200;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.contact-info h2 {
+    margin: 15px 0 20px;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    line-height: 1.1;
+}
+
+.contact-info > p {
+    max-width: 500px;
+
+    color: #777;
+
+    line-height: 1.9;
+}
+
+
+.info-item {
+    margin-top: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0e7;
+
+    font-size: 1.2rem;
+}
+
+.info-item div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item span {
+    color: #999;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.info-item strong {
+    margin-top: 3px;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.order-wrapper {
+    padding: 40px;
+
+    background: white;
+
+    border: 1px solid #eee;
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.07);
+}
+
+.form-header span {
+    color: #ef6200;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.form-header h2 {
+    margin: 10px 0 35px;
+
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 9px;
+
+    background: #fafafa;
+
+    color: #222;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #ef6200;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(239,98,0,0.08);
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* =========================
+   FORM ROW
+========================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 0.35fr;
+
+    gap: 15px;
+}
+
+
+/* =========================
+   ORDER TYPES
+========================= */
+
+.order-types {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+}
+
+.type-option {
+    position: relative;
+
+    cursor: pointer;
+}
+
+.type-option input {
+    position: absolute;
+
+    opacity: 0;
+}
+
+.type-option span {
+    display: block;
+
+    padding: 12px 8px;
+
+    border: 1px solid #ddd;
+    border-radius: 9px;
+
+    text-align: center;
+
+    font-size: 0.75rem;
+
+    transition: 0.3s;
+}
+
+.type-option input:checked + span {
+    border-color: #ef6200;
+
+    background: #fff0e7;
+
+    color: #d95600;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.order-summary {
+    margin: 28px 0;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background: #111;
+
+    color: white;
+}
+
+.order-summary > div {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-summary span {
+    color: #aaa;
+
+    font-size: 0.75rem;
+}
+
+.order-summary strong {
+    color: #ff7010;
+
+    font-size: 1.5rem;
+}
+
+.order-summary small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #888;
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.submit-btn {
+    width: 100%;
+
+    padding: 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #ef6200;
+
+    color: white;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #d95600;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(239,98,0,0.2);
+}
+
+.submit-btn span {
+    font-size: 1.1rem;
+}
+
+.form-note {
+    margin-top: 12px;
+
+    text-align: center;
+
+    color: #999;
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================
+   QUICK CONTACT
+========================= */
+
+.quick-contact {
+    margin: 0 7% 100px;
+
+    padding: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-radius: 22px;
+
+    background: #111;
+
+    color: white;
+}
+
+.quick-contact span {
+    color: #ff7010;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.quick-contact h2 {
+    margin-top: 8px;
+
+    font-size: clamp(1.7rem, 4vw, 2.7rem);
+}
+
+.quick-actions {
+    display: flex;
+
+    gap: 10px;
+}
+
+.quick-actions a {
+    padding: 13px 20px;
+
+    border: 1px solid #444;
+
+    border-radius: 8px;
+
+    font-size: 0.8rem;
+
+    transition: 0.3s;
+}
+
+.quick-actions a:hover {
+    background: white;
+
+    color: #111;
+
+    border-color: white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 45px 7%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid #eee;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo strong {
+    font-size: 1rem;
+}
+
+.footer-logo span {
+    margin-top: 4px;
+
+    color: #ef6200;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+footer p {
+    color: #888;
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes heroReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+
+    .contact-section {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        min-height: 72px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 25px 7%;
+
+        background: white;
+
+        border-bottom: 1px solid #eee;
+    }
+
+    .navbar nav.show {
+        display: flex;
+    }
+
+    .contact-hero {
+        min-height: 65vh;
+    }
+
+    .contact-section {
+        padding: 75px 5%;
+    }
+
+    .order-wrapper {
+        padding: 25px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .order-types {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-contact {
+        margin: 0 5% 70px;
+
+        padding: 35px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .quick-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .quick-actions a {
+        text-align: center;
+    }
+
+    footer {
+        padding: 40px 5%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}

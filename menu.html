@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu ADUSTECHCH Snacks and Catering Services</title>
+
+    <link rel="stylesheet" href="menu.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-icon">🍽️</span>
+
+            <span class="logo-name">
+                <strong>
+                    ADUSTEH SNACKS
+                    <span>AND CATERING</span>
+                </strong>
+
+                <strong>
+                    <span>SERVICES (ASACS)</span>
+                </strong>
+            </span>
+
+        </a>
+
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+
+        <nav id="navMenu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html" class="active">
+                Menu
+            </a>
+
+            <a href="#">
+                About
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="menu-hero">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                🍴 TASTE THE DIFFERENCE
+            </span>
+
+            <h1>
+                Delicious food,
+                <span>made with care.</span>
+            </h1>
+
+            <p>
+                Explore our selection of freshly prepared meals,
+                snacks and catering options made to satisfy every occasion.
+            </p>
+
+            <a href="#foodMenu" class="explore-btn">
+                Explore Menu ↓
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MENU ================= -->
+
+    <section class="menu-section" id="foodMenu">
+
+        <div class="section-heading">
+
+            <span>
+                OUR MENU
+            </span>
+
+            <h2>
+                What are you craving?
+            </h2>
+
+            <p>
+                Choose a category and discover something delicious.
+            </p>
+
+        </div>
+
+
+        <!-- ================= FILTER BUTTONS ================= -->
+
+        <div class="filter-buttons">
+
+            <button
+                class="filter-btn active"
+                data-category="all">
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="meals">
+                🍛 Meals
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="snacks">
+                🥐 Snacks
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="drinks">
+                🥤 Drinks
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="catering">
+                🍽️ Catering
+            </button>
+
+        </div>
+
+
+        <!-- ================= FOOD GRID ================= -->
+
+        <div class="food-grid">
+
+
+            <!-- FOOD 1 -->
+
+            <article
+                class="food-card"
+                data-category="meals">
+
+                <div class="food-image">
+
+                    <div class="image-placeholder">
+                        🍛
+                    </div>
+
+                    <span class="badge">
+                        Popular
+                    </span>
+
+                </div>
+
+
+                <div class="food-info">
+
+                    <div class="food-title">
+
+                        <h3>
+                            Jollof Rice
+                        </h3>
+
+                        <span>
+                            ₦2,500
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Deliciously prepared jollof rice served
+                        with your choice of protein.
+                    </p>
+
+
+                    <button
+                        class="order-btn"
+                        data-food="Jollof Rice">
+
+                        Order Now
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- FOOD 2 -->
+
+            <article
+                class="food-card"
+                data-category="meals">
+
+                <div class="food-image">
+
+                    <div class="image-placeholder">
+                        🍚
+                    </div>
+
+                </div>
+
+
+                <div class="food-info">
+
+                    <div class="food-title">
+
+                        <h3>
+                            Fried Rice
+                        </h3>
+
+                        <span>
+                            ₦2,500
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Flavorful fried rice prepared with fresh
+                        vegetables and quality ingredients.
+                    </p>
+
+
+                    <button
+                        class="order-btn"
+                        data-food="Fried Rice">
+
+                        Order Now
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- FOOD 3 -->
+
+            <article
+                class="food-card"
+                data-category="snacks">
+
+                <div class="food-image">
+
+                    <div class="image-placeholder">
+                        🥐
+                    </div>
+
+                    <span class="badge">
+                        Fresh
+                    </span>
+
+                </div>
+
+
+                <div class="food-info">
+
+                    <div class="food-title">
+
+                        <h3>
+                            Meat Pie
+                        </h3>
+
+                        <span>
+                            ₦700
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Crispy, golden pastry filled with a
+                        delicious seasoned meat filling.
+                    </p>
+
+
+                    <button
+                        class="order-btn"
+                        data-food="Meat Pie">
+
+                        Order Now
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- FOOD 4 -->
+
+            <article
+                class="food-card"
+                data-category="snacks">
+
+                <div class="food-image">
+
+                    <div class="image-placeholder">
+                        🍩
+                    </div>
+
+                </div>
+
+
+                <div class="food-info">
+
+                    <div class="food-title">
+
+                        <h3>
+                            Donuts
+                        </h3>
+
+                        <span>
+                            ₦500
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Soft and delicious donuts perfect for
+                        breakfast or a quick snack.
+                    </p>
+
+
+                    <button
+                        class="order-btn"
+                        data-food="Donuts">
+
+                        Order Now
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- FOOD 5 -->
+
+            <article
+                class="food-card"
+                data-category="drinks">
+
+                <div class="food-image">
+
+                    <div class="image-placeholder">
+                        🥤
+                    </div>
+
+                </div>
+
+
+                <div class="food-info">
+
+                    <div class="food-title">
+
+                        <h3>
+                            Fresh Drink
+                        </h3>
+
+                        <span>
+                            ₦1,000
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Refreshing drinks prepared to complement
+                        your meal.
+                    </p>
+
+
+                    <button
+                        class="order-btn"
+                        data-food="Fresh Drink">
+
+                        Order Now
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- FOOD 6 -->
+
+            <article
+                class="food-card"
+                data-category="catering">
+
+                <div class="food-image">
+
+                    <div class="image-placeholder">
+                        🍽️
+                    </div>
+
+                    <span class="badge">
+                        Events
+                    </span>
+
+                </div>
+
+
+                <div class="food-info">
+
+                    <div class="food-title">
+
+                        <h3>
+                            Event Catering
+                        </h3>
+
+                        <span>
+                            Custom
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Professional food preparation and service
+                        for your special events.
+                    </p>
+
+
+                    <button
+                        class="order-btn"
+                        data-food="Event Catering">
+
+                        Request Quote
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CALL TO ACTION ================= -->
+
+    <section class="cta">
+
+        <div>
+
+            <span>
+                PLANNING AN EVENT?
+            </span>
+
+            <h2>
+                Let us handle the food.
+            </h2>
+
+            <p>
+                From small gatherings to large celebrations,
+                ADUSTEH is ready to serve.
+            </p>
+
+        </div>
+
+
+        <a href="#" class="cta-btn">
+            Contact Us →
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <strong>
+                ADUSTECH SNACKS AND CATERING SERVICES
+            </strong>
+
+            <span>
+                ASACS
+            </span>
+
+        </div>
+
+
+        <p>
+            © 2026 ADUSTECH Snacks and Catering Services.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="menu.js"></script>
+
+</body>
+</html>

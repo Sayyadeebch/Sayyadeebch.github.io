@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Order | ADUSTECH Snacks and Catering Services
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="order.css">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-icon">
+            🍽️
+        </span>
+
+        <span class="logo-name">
+
+            <strong>
+                ADUSTECH SNACKS
+                <span>AND CATERING</span>
+            </strong>
+
+            <strong>
+                <span>SERVICES (ASACS)</span>
+            </strong>
+
+        </span>
+
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation">
+
+        ☰
+
+    </button>
+
+
+    <nav id="navMenu">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="faq.html">
+            FAQ
+        </a>
+
+        <a href="testimonials.html">
+            Reviews
+        </a>
+
+        <a href="order.html" class="active">
+            Order
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="order-hero">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">
+            ✦ ORDER WITH ADUSTECH
+        </span>
+
+        <h1>
+            Your food,
+            <span>your way.</span>
+        </h1>
+
+        <p>
+            Choose your order type, select your meals,
+            and send us your request. Simple, clear
+            and convenient.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ORDER SECTION ================= -->
+
+<main class="order-section">
+
+
+    <div class="section-heading">
+
+        <span>
+            START YOUR ORDER
+        </span>
+
+        <h2>
+            Let's make
+            <span>something delicious.</span>
+        </h2>
+
+        <p>
+            Fill in the details below and review
+            your order before submitting it.
+        </p>
+
+    </div>
+
+
+
+    <div class="order-layout">
+
+
+        <!-- ================= FORM ================= -->
+
+        <form
+            class="order-form"
+            id="orderForm">
+
+
+            <!-- ORDER TYPE -->
+
+            <div class="form-block">
+
+                <div class="block-heading">
+
+                    <span class="step">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Order type
+                        </h3>
+
+                        <p>
+                            What are you ordering for?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="order-types">
+
+                    <label class="type-option">
+
+                        <input
+                            type="radio"
+                            name="orderType"
+                            value="Meal Order"
+                            checked>
+
+                        <span class="type-card">
+
+                            <strong>
+                                🍛
+                            </strong>
+
+                            <span>
+                                Meal Order
+                            </span>
+
+                            <small>
+                                Individual meals
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="type-option">
+
+                        <input
+                            type="radio"
+                            name="orderType"
+                            value="Snack Order">
+
+                        <span class="type-card">
+
+                            <strong>
+                                🥐
+                            </strong>
+
+                            <span>
+                                Snacks
+                            </span>
+
+                            <small>
+                                Snacks & treats
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="type-option">
+
+                        <input
+                            type="radio"
+                            name="orderType"
+                            value="Catering">
+
+                        <span class="type-card">
+
+                            <strong>
+                                🎉
+                            </strong>
+
+                            <span>
+                                Catering
+                            </span>
+
+                            <small>
+                                Events & occasions
+                            </small>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CUSTOMER DETAILS -->
+
+            <div class="form-block">
+
+                <div class="block-heading">
+
+                    <span class="step">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Your details
+                        </h3>
+
+                        <p>
+                            Tell us how we can reach you.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-grid">
+
+                    <div class="input-group">
+
+                        <label for="customerName">
+                            Full name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="phone">
+                            Phone number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="+234..."
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group full">
+
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="example@email.com">
+
+                    </div>
+
+
+                    <div class="input-group full">
+
+                        <label for="address">
+                            Delivery / collection location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="address"
+                            placeholder="Enter your location"
+                            required>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ITEMS -->
+
+            <div class="form-block">
+
+                <div class="block-heading">
+
+                    <span class="step">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Choose your items
+                        </h3>
+
+                        <p>
+                            Select what you'd like to order.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="items-grid">
+
+
+                    <label class="food-option">
+
+                        <input
+                            type="checkbox"
+                            name="item"
+                            value="Jollof Rice"
+                            data-price="2500">
+
+                        <span class="food-card">
+
+                            <strong>
+                                Jollof Rice
+                            </strong>
+
+                            <small>
+                                ₦2,500
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="food-option">
+
+                        <input
+                            type="checkbox"
+                            name="item"
+                            value="Fried Rice"
+                            data-price="2500">
+
+                        <span class="food-card">
+
+                            <strong>
+                                Fried Rice
+                            </strong>
+
+                            <small>
+                                ₦2,500
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="food-option">
+
+                        <input
+                            type="checkbox"
+                            name="item"
+                            value="Chicken"
+                            data-price="2000">
+
+                        <span class="food-card">
+
+                            <strong>
+                                Chicken
+                            </strong>
+
+                            <small>
+                                ₦2,000
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="food-option">
+
+                        <input
+                            type="checkbox"
+                            name="item"
+                            value="Meat Pie"
+                            data-price="1000">
+
+                        <span class="food-card">
+
+                            <strong>
+                                Meat Pie
+                            </strong>
+
+                            <small>
+                                ₦1,000
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="food-option">
+
+                        <input
+                            type="checkbox"
+                            name="item"
+                            value="Samosa"
+                            data-price="800">
+
+                        <span class="food-card">
+
+                            <strong>
+                                Samosa
+                            </strong>
+
+                            <small>
+                                ₦800
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="food-option">
+
+                        <input
+                            type="checkbox"
+                            name="item"
+                            value="Zobo"
+                            data-price="700">
+
+                        <span class="food-card">
+
+                            <strong>
+                                Zobo
+                            </strong>
+
+                            <small>
+                                ₦700
+                            </small>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EXTRA MESSAGE -->
+
+            <div class="form-block">
+
+                <div class="block-heading">
+
+                    <span class="step">
+                        04
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Additional information
+                        </h3>
+
+                        <p>
+                            Anything else we should know?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Special instructions, event details, quantity requirements..."></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-button">
+
+                Submit Order Request
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- ================= SUMMARY ================= -->
+
+        <aside class="order-summary">
+
+            <div class="summary-top">
+
+                <span>
+                    YOUR ORDER
+                </span>
+
+                <h2>
+                    Order summary
+                </h2>
+
+            </div>
+
+
+            <div
+                class="summary-items"
+                id="summaryItems">
+
+                <div class="empty-summary">
+
+                    <div>
+                        🛒
+                    </div>
+
+                    <p>
+                        Your selected items
+                        will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-bottom">
+
+                <div class="summary-row">
+
+                    <span>
+                        Order type
+                    </span>
+
+                    <strong id="summaryType">
+                        Meal Order
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row total">
+
+                    <span>
+                        Estimated total
+                    </span>
+
+                    <strong id="summaryTotal">
+                        ₦0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-note">
+
+                <span>
+                    ✓
+                </span>
+
+                <p>
+                    This is an order request.
+                    Final pricing and availability
+                    will be confirmed by ADUSTECH.
+                </p>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+
+<!-- ================= SUCCESS MODAL ================= -->
+
+<div
+    class="modal"
+    id="successModal">
+
+    <div class="modal-card">
+
+        <button
+            class="close-modal"
+            id="closeModal">
+
+            ×
+
+        </button>
+
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <span>
+            REQUEST RECEIVED
+        </span>
+
+        <h2>
+            Thank you!
+        </h2>
+
+        <p>
+            Your order request has been prepared.
+            ADUSTECH can review your details and
+            contact you for confirmation.
+        </p>
+
+
+        <button
+            class="modal-button"
+            id="modalOkay">
+
+            Done
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <strong>
+            ADUSTECH SNACKS AND CATERING SERVICES
+        </strong>
+
+        <span>
+            ASACS
+        </span>
+
+    </div>
+
+
+    <p>
+        © 2026 ADUSTECH Snacks and Catering Services.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+
+<script src="order.js"></script>
+
+</body>
+
+</html>
