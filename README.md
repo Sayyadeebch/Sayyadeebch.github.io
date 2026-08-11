@@ -1,1 +1,1 @@
-cd into your site folder
+Sayyadeebch.github.io
