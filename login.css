@@ -1,0 +1,777 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fafafa;
+    color: #171717;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 78px;
+    padding: 12px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255,255,255,0.95);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 0.92rem;
+    line-height: 1.35;
+}
+
+.logo-name strong span {
+    color: #ef6200;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 18px;
+}
+
+.navbar nav a {
+    position: relative;
+
+    color: #555;
+
+    font-size: 0.8rem;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #ef6200;
+}
+
+.navbar nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #ef6200;
+}
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 1.7rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+    min-height: calc(100vh - 78px);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================
+   VISUAL SIDE
+========================= */
+
+.login-visual {
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 80px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,0,0,0.93),
+            rgba(0,0,0,0.55)
+        ),
+        url("images/login-hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.visual-content {
+    max-width: 550px;
+
+    animation: visualReveal 1s ease;
+}
+
+.visual-content > span {
+    color: #ff7010;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.visual-content h1 {
+    margin: 18px 0;
+
+    font-size: clamp(2.8rem, 5vw, 5rem);
+
+    line-height: 1.05;
+}
+
+.visual-content h1 strong {
+    display: block;
+
+    color: #ff7010;
+}
+
+.visual-content p {
+    max-width: 500px;
+
+    color: #ddd;
+
+    font-size: 0.9rem;
+
+    line-height: 1.9;
+}
+
+.visual-line {
+    width: 60px;
+    height: 3px;
+
+    margin: 35px 0 20px;
+
+    background: #ef6200;
+}
+
+.visual-content small {
+    color: #999;
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 7%;
+}
+
+.login-card {
+    width: 100%;
+
+    max-width: 480px;
+}
+
+.login-heading {
+    margin-bottom: 35px;
+}
+
+.login-heading > span {
+    color: #ef6200;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.login-heading h2 {
+    margin: 7px 0;
+
+    font-size: 2.2rem;
+}
+
+.login-heading p {
+    color: #999;
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+#loginForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.input-group label {
+    font-size: 0.7rem;
+
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: white;
+
+    font-size: 0.78rem;
+
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ef6200;
+
+    box-shadow:
+        0 0 0 3px rgba(239,98,0,0.08);
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 50px;
+}
+
+.show-password {
+    position: absolute;
+
+    top: 50%;
+    right: 12px;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.login-options {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 0.65rem;
+}
+
+.login-options label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #777;
+}
+
+.login-options input {
+    accent-color: #ef6200;
+}
+
+.login-options a {
+    color: #ef6200;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-button {
+    padding: 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ef6200;
+
+    color: white;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    background: #111;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.12);
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+    margin: 30px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddd;
+}
+
+.divider span {
+    color: #aaa;
+
+    font-size: 0.6rem;
+}
+
+
+/* =========================
+   CREATE ACCOUNT
+========================= */
+
+.create-account {
+    display: block;
+
+    padding: 14px;
+
+    text-align: center;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    color: #222;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.create-account:hover {
+    border-color: #ef6200;
+
+    color: #ef6200;
+}
+
+.login-footer {
+    margin-top: 25px;
+
+    text-align: center;
+
+    color: #999;
+
+    font-size: 0.65rem;
+}
+
+.login-footer a {
+    color: #ef6200;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(0,0,0,0.7);
+
+    backdrop-filter: blur(8px);
+}
+
+.modal.show {
+    display: flex;
+
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-card {
+    width: 100%;
+
+    max-width: 440px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background: white;
+
+    animation: modalIn 0.4s ease;
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    color: #ff7010;
+
+    font-size: 1.7rem;
+}
+
+.modal-card > span {
+    color: #ef6200;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.modal-card h2 {
+    margin: 8px 0;
+
+    font-size: 1.9rem;
+}
+
+.modal-card p {
+    color: #777;
+
+    font-size: 0.75rem;
+
+    line-height: 1.8;
+}
+
+.modal-button {
+    margin-top: 25px;
+
+    padding: 12px 30px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #ef6200;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 45px 7%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid #eee;
+}
+
+.footer-logo {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.footer-logo strong {
+    font-size: 1rem;
+}
+
+.footer-logo span {
+    margin-top: 4px;
+
+    color: #ef6200;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+footer p {
+    color: #888;
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes visualReveal {
+
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1050px) {
+
+    .navbar nav {
+        gap: 10px;
+    }
+
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .login-visual {
+        min-height: 430px;
+
+        padding: 60px 7%;
+    }
+
+    .login-container {
+        padding: 70px 7%;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        min-height: 72px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 25px 7%;
+
+        background: white;
+
+        border-bottom: 1px solid #eee;
+    }
+
+    .navbar nav.show {
+        display: flex;
+    }
+
+    .login-visual {
+        min-height: 420px;
+
+        padding: 50px 7%;
+    }
+
+    .login-container {
+        padding: 60px 6%;
+    }
+
+    footer {
+        padding: 40px 5%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
