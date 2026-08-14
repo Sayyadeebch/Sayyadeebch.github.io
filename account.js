@@ -26,24 +26,28 @@ const navMenu =
     document.getElementById("navMenu");
 
 
-menuToggle.addEventListener("click", () => {
+if (menuToggle && navMenu) {
 
-    navMenu.classList.toggle("show");
+    menuToggle.addEventListener("click", () => {
 
-});
+        navMenu.classList.toggle("show");
+
+    });
 
 
-document
-    .querySelectorAll("#navMenu a")
-    .forEach(link => {
+    document
+        .querySelectorAll("#navMenu a")
+        .forEach(link => {
 
-        link.addEventListener("click", () => {
+            link.addEventListener("click", () => {
 
-            navMenu.classList.remove("show");
+                navMenu.classList.remove("show");
+
+            });
 
         });
 
-    });
+}
 
 
 // ==========================================
@@ -174,7 +178,7 @@ password.addEventListener("input", () => {
 
 
 // ==========================================
-// FORM ELEMENTS
+// FORM
 // ==========================================
 
 const accountForm =
@@ -198,6 +202,12 @@ const terms =
 const successModal =
     document.getElementById("successModal");
 
+const closeModal =
+    document.getElementById("closeModal");
+
+const modalOkay =
+    document.getElementById("modalOkay");
+
 
 // ==========================================
 // CREATE ACCOUNT
@@ -205,12 +215,14 @@ const successModal =
 
 accountForm.addEventListener(
     "submit",
-    async event => {
+    async function (event) {
 
         event.preventDefault();
 
+        event.stopPropagation();
 
-        // Get values
+
+        // Get form values
 
         const nameValue =
             fullName.value.trim();
@@ -229,7 +241,7 @@ accountForm.addEventListener(
 
 
         // ==================================
-        // BASIC VALIDATION
+        // VALIDATION
         // ==================================
 
         if (nameValue === "") {
@@ -237,8 +249,6 @@ accountForm.addEventListener(
             alert(
                 "Please enter your full name."
             );
-
-            fullName.focus();
 
             return;
 
@@ -251,8 +261,6 @@ accountForm.addEventListener(
                 "Please enter your email address."
             );
 
-            email.focus();
-
             return;
 
         }
@@ -264,16 +272,10 @@ accountForm.addEventListener(
                 "Please enter your phone number."
             );
 
-            phone.focus();
-
             return;
 
         }
 
-
-        // ==================================
-        // PASSWORD MATCH
-        // ==================================
 
         if (
             passwordValue !==
@@ -284,16 +286,10 @@ accountForm.addEventListener(
                 "Passwords do not match."
             );
 
-            confirmPassword.focus();
-
             return;
 
         }
 
-
-        // ==================================
-        // PASSWORD LENGTH
-        // ==================================
 
         if (passwordValue.length < 8) {
 
@@ -301,16 +297,10 @@ accountForm.addEventListener(
                 "Password must contain at least 8 characters."
             );
 
-            password.focus();
-
             return;
 
         }
 
-
-        // ==================================
-        // TERMS
-        // ==================================
 
         if (!terms.checked) {
 
@@ -324,7 +314,7 @@ accountForm.addEventListener(
 
 
         // ==================================
-        // DISABLE BUTTON
+        // BUTTON
         // ==================================
 
         const createButton =
@@ -332,97 +322,122 @@ accountForm.addEventListener(
                 ".create-button"
             );
 
+
         createButton.disabled = true;
 
         createButton.innerHTML =
             "Creating Account...";
 
 
-        // ==================================
-        // SUPABASE SIGN UP
-        // ==================================
+        try {
 
-        const {
-            data,
-            error
-        } = await supabase.auth.signUp({
+            // ==================================
+            // SUPABASE SIGN UP
+            // ==================================
 
-            email: emailValue,
+            const {
+                data,
+                error
+            } = await supabase.auth.signUp({
 
-            password: passwordValue,
+                email: emailValue,
 
-            options: {
+                password: passwordValue,
 
-                data: {
+                options: {
 
-                    full_name:
-                        nameValue,
+                    data: {
 
-                    phone:
-                        phoneValue
+                        full_name:
+                            nameValue,
+
+                        phone:
+                            phoneValue
+
+                    }
 
                 }
 
+            });
+
+
+            // ==================================
+            // ERROR
+            // ==================================
+
+            if (error) {
+
+                console.error(
+                    "Supabase error:",
+                    error
+                );
+
+                alert(
+                    error.message
+                );
+
+                createButton.disabled =
+                    false;
+
+                createButton.innerHTML =
+                    'Create Account <span>→</span>';
+
+                return;
+
             }
 
-        });
 
+            // ==================================
+            // SUCCESS
+            // ==================================
 
-        // ==================================
-        // HANDLE ERROR
-        // ==================================
-
-        if (error) {
-
-            console.error(
-                "Supabase signup error:",
-                error
+            console.log(
+                "Supabase account:",
+                data
             );
 
-            alert(
-                error.message
-            );
 
-            createButton.disabled = false;
+            createButton.disabled =
+                false;
 
             createButton.innerHTML =
                 'Create Account <span>→</span>';
 
-            return;
+
+            successModal.classList.add(
+                "show"
+            );
+
+
+            accountForm.reset();
+
+
+            strengthBar.style.width =
+                "0%";
+
+            strengthText.textContent =
+                "Password strength";
+
+
+        } catch (error) {
+
+            console.error(
+                "Unexpected error:",
+                error
+            );
+
+            alert(
+                "Something went wrong. Please try again."
+            );
+
+
+            createButton.disabled =
+                false;
+
+            createButton.innerHTML =
+                'Create Account <span>→</span>';
 
         }
-
-
-        // ==================================
-        // SUCCESS
-        // ==================================
-
-        console.log(
-            "Account created:",
-            data
-        );
-
-
-        createButton.disabled = false;
-
-        createButton.innerHTML =
-            'Create Account <span>→</span>';
-
-
-        successModal.classList.add(
-            "show"
-        );
-
-
-        // Clear form
-
-        accountForm.reset();
-
-        strengthBar.style.width =
-            "0%";
-
-        strengthText.textContent =
-            "Password strength";
 
     }
 );
@@ -431,13 +446,6 @@ accountForm.addEventListener(
 // ==========================================
 // CLOSE MODAL
 // ==========================================
-
-const closeModal =
-    document.getElementById("closeModal");
-
-const modalOkay =
-    document.getElementById("modalOkay");
-
 
 function closeSuccessModal() {
 
