@@ -1,13 +1,24 @@
 // ==========================================
+// SUPABASE CONNECTION
+// ==========================================
+
+const supabaseUrl =
+    "https://tkrdzdbpbolkhkebxfdh.supabase.co";
+
+const supabaseKey =
+    "sb_publishable_kKYC3IfgzWGZTgDzLATZ7A_2j30XaQw";
+
+const supabase =
+    window.supabase.createClient(
+        supabaseUrl,
+        supabaseKey
+    );
+
+
+// ==========================================
 // MOBILE NAVIGATION
 // ==========================================
-const supabaseUrl = "https://tkrdzdbpbolkhkebxfdh.supabase.co";
-const supabaseKey = "sb_publishable_kKYC3IfgzWGZTgDzLATZ7A_2j30XaQw";
 
-const supabase = window.supabase.createClient(
-    supabaseUrl,
-    supabaseKey
-);
 const menuToggle =
     document.getElementById("menuToggle");
 
@@ -95,30 +106,22 @@ password.addEventListener("input", () => {
 
 
     if (value.length >= 8) {
-
         strength++;
-
     }
 
 
     if (/[A-Z]/.test(value)) {
-
         strength++;
-
     }
 
 
     if (/[0-9]/.test(value)) {
-
         strength++;
-
     }
 
 
     if (/[^A-Za-z0-9]/.test(value)) {
-
         strength++;
-
     }
 
 
@@ -171,11 +174,20 @@ password.addEventListener("input", () => {
 
 
 // ==========================================
-// FORM
+// FORM ELEMENTS
 // ==========================================
 
 const accountForm =
     document.getElementById("accountForm");
+
+const fullName =
+    document.getElementById("fullName");
+
+const email =
+    document.getElementById("email");
+
+const phone =
+    document.getElementById("phone");
 
 const confirmPassword =
     document.getElementById("confirmPassword");
@@ -187,18 +199,85 @@ const successModal =
     document.getElementById("successModal");
 
 
+// ==========================================
+// CREATE ACCOUNT
+// ==========================================
+
 accountForm.addEventListener(
     "submit",
-    event => {
+    async event => {
 
         event.preventDefault();
 
 
-        // Password matching
+        // Get values
+
+        const nameValue =
+            fullName.value.trim();
+
+        const emailValue =
+            email.value.trim();
+
+        const phoneValue =
+            phone.value.trim();
+
+        const passwordValue =
+            password.value;
+
+        const confirmPasswordValue =
+            confirmPassword.value;
+
+
+        // ==================================
+        // BASIC VALIDATION
+        // ==================================
+
+        if (nameValue === "") {
+
+            alert(
+                "Please enter your full name."
+            );
+
+            fullName.focus();
+
+            return;
+
+        }
+
+
+        if (emailValue === "") {
+
+            alert(
+                "Please enter your email address."
+            );
+
+            email.focus();
+
+            return;
+
+        }
+
+
+        if (phoneValue === "") {
+
+            alert(
+                "Please enter your phone number."
+            );
+
+            phone.focus();
+
+            return;
+
+        }
+
+
+        // ==================================
+        // PASSWORD MATCH
+        // ==================================
 
         if (
-            password.value !==
-            confirmPassword.value
+            passwordValue !==
+            confirmPasswordValue
         ) {
 
             alert(
@@ -212,9 +291,11 @@ accountForm.addEventListener(
         }
 
 
-        // Minimum password length
+        // ==================================
+        // PASSWORD LENGTH
+        // ==================================
 
-        if (password.value.length < 8) {
+        if (passwordValue.length < 8) {
 
             alert(
                 "Password must contain at least 8 characters."
@@ -227,7 +308,9 @@ accountForm.addEventListener(
         }
 
 
-        // Terms
+        // ==================================
+        // TERMS
+        // ==================================
 
         if (!terms.checked) {
 
@@ -240,9 +323,106 @@ accountForm.addEventListener(
         }
 
 
-        // Show success modal
+        // ==================================
+        // DISABLE BUTTON
+        // ==================================
 
-        successModal.classList.add("show");
+        const createButton =
+            accountForm.querySelector(
+                ".create-button"
+            );
+
+        createButton.disabled = true;
+
+        createButton.innerHTML =
+            "Creating Account...";
+
+
+        // ==================================
+        // SUPABASE SIGN UP
+        // ==================================
+
+        const {
+            data,
+            error
+        } = await supabase.auth.signUp({
+
+            email: emailValue,
+
+            password: passwordValue,
+
+            options: {
+
+                data: {
+
+                    full_name:
+                        nameValue,
+
+                    phone:
+                        phoneValue
+
+                }
+
+            }
+
+        });
+
+
+        // ==================================
+        // HANDLE ERROR
+        // ==================================
+
+        if (error) {
+
+            console.error(
+                "Supabase signup error:",
+                error
+            );
+
+            alert(
+                error.message
+            );
+
+            createButton.disabled = false;
+
+            createButton.innerHTML =
+                'Create Account <span>→</span>';
+
+            return;
+
+        }
+
+
+        // ==================================
+        // SUCCESS
+        // ==================================
+
+        console.log(
+            "Account created:",
+            data
+        );
+
+
+        createButton.disabled = false;
+
+        createButton.innerHTML =
+            'Create Account <span>→</span>';
+
+
+        successModal.classList.add(
+            "show"
+        );
+
+
+        // Clear form
+
+        accountForm.reset();
+
+        strengthBar.style.width =
+            "0%";
+
+        strengthText.textContent =
+            "Password strength";
 
     }
 );
@@ -261,7 +441,9 @@ const modalOkay =
 
 function closeSuccessModal() {
 
-    successModal.classList.remove("show");
+    successModal.classList.remove(
+        "show"
+    );
 
 }
 
